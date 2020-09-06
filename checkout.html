@@ -51,7 +51,8 @@ var Email = { send: function (a) { return new Promise(function (n, e) { a.nocach
   if(response == 'OK'){
     alert("Comanda trimisa cu succes!");
   }else{
-    throw new Error("Error: " + response.statusText);
+    alert("Eroare!");
+    // throw new Error("Error: " + response.statusText);
   }
 }
   
