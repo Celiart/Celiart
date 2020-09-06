@@ -1,0 +1,60 @@
+---
+title: Plaseaza comanda
+description:
+sitemap: false
+---
+<!-- https://smtpjs.com/ -->
+<script>
+  /* SmtpJS.com - v3.0.0 */
+var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+</script>
+
+<form method="post" action="/" onsubmit="return check();">
+  <label>Prenume</label>
+  <input type="text" name="Prenume">
+
+  <label>Nume</label>
+  <input type="text" name="Nume">
+
+  <label>Email</label>
+  <input type="text" name="Email">
+
+  <label>Adresa</label>
+  <input type="text" name="Strada" placeholder="Strada">
+  <input type="text" name="Numar de telefon" placeholder="Numar de telefon">
+  <input type="text" name="Judet" placeholder="Judet">
+  <input type="text" name="Oras" placeholder="Oras">
+
+  <input type="hidden" name="_to" value="soalenax@gmail.com,worthshoot@gmail.com">
+  <input type="text" name="_gotcha" style="display: none;">
+
+  <input type="submit" onclick="send(event)" value="Plaseaza comanda">
+</form>
+<script>
+  
+  function send(event){
+    // console.log(document.getElementsByName('prenume')[0].value);
+    event.preventDefault();
+  Email.send({
+    SecureToken : "48901c81-c60a-4c30-8357-912debe04ae1",
+    To : 'soalenax@gmail.com, worthshoot@gmail.com',
+    From : "celiart.office@gmail.com",
+    Subject : "Comanda Celiart",
+    Body : document.getElementsByName('Prenume')[0].value ,
+	Attachments : [
+	{
+		name : "",
+		path : ""
+	}]
+}).then(function(response){
+  if(response == 'OK'){
+    alert("Comanda trimisa cu succes!");
+  }else{
+    throw new Error("Error: " + response.statusText);
+  }
+}
+  
+);
+}
+</script>
+

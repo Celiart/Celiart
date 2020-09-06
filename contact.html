@@ -1,0 +1,26 @@
+---
+title: Contact
+emails:
+  - worthshoot@gmail.com
+  - ligiabodnaras@yahoo.com
+description:
+facebook_image_path:
+---
+
+<p class="editable">Ne-am bucura sa primim vesti de la tine.</p>
+
+<form method="post" action="{{ site.url }}">
+  <label>Nume</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="text" name="email" required>
+
+  <label>Mesaj</label>
+  <textarea name="message" required></textarea>
+
+  <input type="hidden" value="{{ page.emails | join: ',' }}" name="_to">
+  <input type="text" style="display: none;" name="_gotcha">
+
+  <input type="submit" value="Trimite Mesaj">
+</form>

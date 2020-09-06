@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="site-inner">
+  <div class="wrap">
+    <div class="content-sidebar-wrap">
+
+      <main class="content single-product simpleCart_shelfItem" itemscope itemtype="http://schema.org/Product">
+
+        <section class="product-image">
+          <div class="styles">
+        				<img src="{{site.url}}{{ page.featured_image_path }}" itemprop="image">
+          </div>
+        </section>
+
+        <section class="product-details">
+          <h1 class="entry-title item_name" itemprop="name">{{ page.name }}</h1>
+          <!-- . -->
+          <p class=""><span>Tip:</span> {{ page.tip }}</p>
+          <p class=""><span>Dimensiuni:</span> {{ page.size }} cm</p>
+          <p class=""><span>Tehnica:</span> {{ page.tehnica }}</p>
+          <p class=""><span>Autor:</span> {{ page.autor }}</p>
+          <p class=""><span>An:</span> {{ page.an }}</p>
+          <p class="item_price"><span>Pret:</span> {{ page.price }} LEI</p>
+          {{ content }}
+
+          <a id="item_add" class="item_add button" href="javascript:;"> Adauga in Cosul meu </a></span>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+</div>
