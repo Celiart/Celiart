@@ -36,7 +36,7 @@ var Email = { send: function (a) { return new Promise(function (n, e) { a.nocach
     // console.log(document.getElementsByName('prenume')[0].value);
     event.preventDefault();
   Email.send({
-    SecureToken : "48901c81-c60a-4c30-8357-912debe04ae1",
+    SecureToken : "4f05fcc2-8fef-4e74-a997-830d9050ce98",
     To : 'soalenax@gmail.com, worthshoot@gmail.com',
     From : "celiart.office@gmail.com",
     Subject : "Comanda Celiart",
@@ -46,7 +46,8 @@ var Email = { send: function (a) { return new Promise(function (n, e) { a.nocach
 		name : "",
 		path : ""
 	}]
-}).then(function(response){
+}).then(
+  function(response){
   if(response == 'OK'){
     alert("Comanda trimisa cu succes!");
   }else{

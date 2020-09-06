@@ -1,0 +1,13 @@
+user
+celiart.office@gmail.com
+
+pw
+8B1653FED9174A9D6464A1558D7180D70FE8
+
+server
+smtp.elasticemail.com
+
+port
+2525
+
+security token from smtpjs
